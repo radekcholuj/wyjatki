@@ -2,6 +2,7 @@ package pl.radekcholuj.exceptions;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class FirstExceptions {
     public static void main(String[] args) {
@@ -20,6 +21,23 @@ public class FirstExceptions {
             FileInputStream fileInputStream = new FileInputStream("/to/ma/byc/sciezka/plik.text");
         } catch (FileNotFoundException e){
             System.out.println("Not exists.");
+        }
+        Scanner scanner = new Scanner(System.in);
+        try {
+            System.out.print("Insert number 1:");
+            a = scanner.nextInt();
+            System.out.print("Insert number 2:");
+            b = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.println(a / b);
+            System.out.print("Insert path to file:");
+            String path = scanner.nextLine();
+            FileInputStream fileInputStream = new FileInputStream(path);
+        } catch (FileNotFoundException e){
+            System.out.println("Not exists.");
+        } catch (ArithmeticException e){
+            System.out.println("Not divide by 0.");
         }
     }
 }
