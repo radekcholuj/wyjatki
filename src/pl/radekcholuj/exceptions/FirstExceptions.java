@@ -39,8 +39,11 @@ public class FirstExceptions {
         } catch (ArithmeticException e){
             System.out.println("Not divide by 0.");
         }
+        catch (Exception e){
+            System.out.println("...");
+        }
 
-        
+
         try {
             System.out.print("Insert number 1:");
             a = scanner.nextInt();
@@ -53,6 +56,22 @@ public class FirstExceptions {
             String path = scanner.nextLine();
             FileInputStream fileInputStream = new FileInputStream(path);
         } catch (FileNotFoundException | ArithmeticException e){
+            System.out.println("Incorect data.");
+        }
+
+
+        try {
+            System.out.print("Insert number 1:");
+            a = scanner.nextInt();
+            System.out.print("Insert number 2:");
+            b = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.println(a / b);
+            System.out.print("Insert path to file:");
+            String path = scanner.nextLine();
+            FileInputStream fileInputStream = new FileInputStream(path);
+        } catch (Exception e) {
             System.out.println("Incorect data.");
         }
     }
