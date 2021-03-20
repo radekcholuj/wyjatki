@@ -73,6 +73,8 @@ public class FirstExceptions {
             FileInputStream fileInputStream = new FileInputStream(path);
         } catch (Exception e) {
             System.out.println("Incorect data.");
+        } finally {
+            scanner.close();
         }
     }
 }
